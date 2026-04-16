@@ -36,22 +36,31 @@ public class Sponge {
   create a forloop to go thru every character for(int i = 0; i < chars.length; i++)
     if else statement. if word is divisible by 2 keep lowercase
     else make uppercase
+
+    update
+    add word++ to go thru the word
+    add if else statement to indicate if theres spaces
    */
 
   // Implement your solution here!
   public static String spongeCase(String sentence) {
     char[] chars = sentence.toCharArray();
     int word = 0;
+
     for (int i = 0; i < chars.length; i++) {
-      if (word % 2 == 0) {
-        chars[i] = Character.toLowerCase(chars[i]);
+      if (chars[i] == ' ') {
+        word = 0;
       } else {
-        chars[i] = Character.toUpperCase(chars[i]);
+        if (word % 2 == 0) {
+          chars[i] = Character.toLowerCase(chars[i]);
+        } else {
+          chars[i] = Character.toUpperCase(chars[i]);
+        }
+        word++;
       }
     }
     return new String(chars);
   }
-
 
   // Method to help with testing, you do not need to read this.
   public static void assertEqual(int testNumber, String actual, String expected) {
