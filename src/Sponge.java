@@ -31,9 +31,25 @@ public class Sponge {
     assertEqual(6, spongeCase("e"), "e");
   }
 
+  /*
+  convert the strings into characters
+  create a forloop to go thru every character for(int i = 0; i < chars.length; i++)
+    if else statement. if word is divisible by 2 keep lowercase
+    else make uppercase
+   */
+
   // Implement your solution here!
   public static String spongeCase(String sentence) {
-    return null;
+    char[] chars = sentence.toCharArray();
+    int word = 0;
+    for (int i = 0; i < chars.length; i++) {
+      if (word % 2 == 0) {
+        chars[i] = Character.toLowerCase(chars[i]);
+      } else {
+        chars[i] = Character.toUpperCase(chars[i]);
+      }
+    }
+    return new String(chars);
   }
 
 
