@@ -24,9 +24,27 @@ public class Pig {
         assertEqual(5, pigLatin("e"), "e");
     }
 
+    /*
+    break the sentance into single words
+    create a string to store the words
+    for loop
+    check if the begining letter starts with any vowls
+    if else statement. if starts wity vowls then leave alone else add ay at end
+     */
+
     // Implement your solution here!
     public static String pigLatin(String sentence) {
-        return null;
+        String[] words = sentence.split(" ");
+        String result = "";
+        for (String word : words) {
+            char first = word.charAt(0);
+            if (first == 'a' || first == 'e' || first == 'i' || first == 'o' || first == 'u') {
+                result += word;
+            } else {
+                result += word.substring(1) + first + "ay";
+            }
+        }
+        return result;
     }
 
 
